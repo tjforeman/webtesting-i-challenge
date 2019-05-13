@@ -3,15 +3,13 @@ const enhancer = require('./enhancer.js');
 
 describe('success method',()=>{
     it('should increase enhancement by 1',()=>{
-        const item={
-            enhancement:13
-        }
-        expect(enhancer.succeed(item).enhancement).toBe(14)
+
+        expect(enhancer.succeed({enhancement:13}).enhancement).toBe(14)
+        expect(enhancer.succeed({enhancement:12}).enhancement).toBe(13)
+        expect(enhancer.succeed({enhancement:11}).enhancement).toBe(12)
     })
     it('should keep enhancement the same',()=>{
-        const item={
-            enhancement:20
-        }
-        expect(enhancer.succeed(item).enhancement).toBe(20)
+       
+        expect(enhancer.succeed({enhancement:20}).enhancement).toBe(20)
     })
 })
