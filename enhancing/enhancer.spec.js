@@ -36,3 +36,13 @@ describe('fail method',()=>{
         expect(enhancer.fail({enhancement:20,durability:48}).durability).toBe(47)
     })
 })
+describe('Repair method',()=>{
+    it('should restore durability to 100',()=>{
+        expect(enhancer.repair({durability:60}).durability).toBe(100)
+        expect(enhancer.repair({durability:2}).durability).toBe(100)
+        expect(enhancer.repair({durability:50}).durability).toBe(100)
+        expect(enhancer.repair({durability:12}).durability).toBe(100)
+        expect(enhancer.repair({durability:22}).durability).toBe(100)
+        expect(enhancer.repair({durability:100}).durability).toBe(100)
+    })
+})
